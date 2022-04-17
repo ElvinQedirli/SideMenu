@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    list-style: none;
 }
 
 .navbar{
@@ -12,35 +13,91 @@
     box-shadow: 43px -20px 40px -15px rgba(0, 0, 0, 0.1);
     background-color: aliceblue;
 }
-.navbar ul li{
+.navbar .main_ul li{
     padding: 93px 20px 0 20px;
+    display: block;
 }
-.navbar ul li a{
+.navbar .main_ul li a{
     display: flex;
     transition: all 1s ease-out;
 }
-.navbar ul li a p{
+.navbar .main_ul li a p{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 17px;
     font-weight: 400;
     display: none;
 }
-.navbar ul li a i{
+.navbar .main_ul li a i{
     color: black;
     font-size: 22px;
 }
 
-.navbar ul li a:hover{
+.navbar .main_ul li a:hover{
     background-color: blue;
     border-radius: 7px;
     padding: 15px;
     transition: all 0.8s 0s ease;
 }
-.navbar ul li a:hover i{
+.navbar .main_ul li a:hover i{
     color: white;
     padding-right: 10px;
 }
-.navbar ul li a:hover p{
+.navbar .main_ul li a:hover p{
     display: block;
     color: white;
+}
+
+/* burger menu start */
+.burger_menu{
+    display: none;
+}
+.burger_menu .menu_ul{
+    position: absolute; 
+    top: 50px;
+    left: 10px;
+    background-color: blue;
+    transition: all 0.8s ease-in-out;
+}
+.burger_menu .menu_ul li{
+    padding: 5px 50px 7px 20px;
+}
+.burger_menu .span .fa-bars{
+    position: relative;
+    top: 20px;
+    left: 14px;
+    cursor: pointer;
+}
+
+.burger_menu .menu_ul li a{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: white;
+}
+
+/* burger menu end */
+/* Start write media quaries for responsive design */
+
+@media (max-width: 768px) {
+    .navbar{
+        bottom: 0;
+        height: auto;
+    }
+    .navbar ul{
+        display: flex;
+    }
+    .navbar ul li{
+        padding: 20px 84px 20px 30px!important;
+    }
+    .navbar ul li a p{
+        font-size: 13px;
+    }
+}
+@media (max-width: 600px) {
+    .navbar{
+        display: none;
+    }
+    .burger_menu{
+        display: block;
+    }
 }
